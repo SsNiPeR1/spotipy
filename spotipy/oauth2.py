@@ -924,7 +924,7 @@ class SpotifyPKCE(SpotifyAuthBase):
             token_info = response.json()
             token_info = self._add_custom_values_to_token_info(token_info)
             self.cache_handler.save_token_to_cache(token_info)
-            return token_info["access_token"]
+            return token_info
         except requests.exceptions.HTTPError as http_error:
             self._handle_oauth_error(http_error)
 
