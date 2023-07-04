@@ -496,7 +496,7 @@ class SpotifyOAuth(SpotifyAuthBase):
                                'the URL your browser is redirected to.',
                                redirect_host, redirect_host)
 
-        return self._get_auth_response_interactive(open_browser=open_browser)
+        return None
 
     def get_authorization_code(self, response=None):
         if response:
@@ -804,7 +804,7 @@ class SpotifyPKCE(SpotifyAuthBase):
                                'instead of having to copy and paste '
                                'the URL your browser is redirected to.',
                                redirect_host, redirect_host)
-        return self._get_auth_response_interactive(open_browser=open_browser)
+        return None
 
     def _get_auth_response_local_server(self, redirect_port):
         server = start_local_http_server(redirect_port)
